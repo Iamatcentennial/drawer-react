@@ -19,6 +19,7 @@ const styles = {
     drawerPaper:{
         border:'2px solid red',
         position:'relative',
+       
         
     }
   };
@@ -41,15 +42,16 @@ export class MainContent extends Component {
         return (
             <div style={{display:'flex',height:500, direction:'row', marginTop:50}}>
                <div style={{flexGrow:1,  border:'2px solid green'}}>Split Component</div>
-               <div style={{minWidth:50, maxWidth:350,  border:'2px solid blue'}}>
+               <div style={{minWidth:50, maxWidth:350, height:500,  border:'2px solid blue', 
+               alignSelf:'flex-end'}}>
 
-             { !open ? <div>
-               
+             { !open ? 
+            <div style={{alignSelf:'flex-end'}}> 
                <IconButton onClick={this.handleDrawerOpen}>
                <ChevronLeftIcon /> 
              </IconButton>
              </div>
-              : <Drawer variant="persistent"
+              : <Drawer style={{height:500}} variant="persistent"
                classes={{
                 paper: classes.drawerPaper,
                 root:classes.drawerRoot
